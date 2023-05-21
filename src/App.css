@@ -15,7 +15,7 @@ td:not(.small), th:not(.small) {
     width: 20rem;
 }
 td{
-    border-bottom: 0.5px solid aliceblue;
+    border-bottom: 0.5px solid rgba(240, 248, 255, 0.402);
     text-align: left;
     align-items: center;
 }
