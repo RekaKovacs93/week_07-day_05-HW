@@ -1,5 +1,5 @@
 import React from "react";
-import "./listItems.css"
+
 
 const ListNames = ({currency}) => {
     return (

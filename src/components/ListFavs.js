@@ -1,10 +1,11 @@
 import React from "react";
-import "./listItems.css"
 
-const ListFavs = ({currency}) => {
+
+const ListFavs = ({currency, deleteFav}) => {
     return (
-        <div>
+        <div className="favcont">
         <div className="favourites">
+        {/* <button onClick={() => deleteFav(currency.id)}>X</button> */}
         <img src={currency.image}></img>
         <h4>{currency.name}</h4></div>
         </div>

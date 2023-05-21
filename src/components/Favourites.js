@@ -3,9 +3,16 @@ import { useState } from "react";
 import ListNames from "./ListNames";
 import ListFavs from "./ListFavs";
 
-const Favourites = ({currencies, onCurrencySelected, onFavouriteSelected}) => {
+const Favourites = ({currencies}) => {
+    const deleteFav = function(id){
+        const removed = currencies.filter((currency) => {
+          return currency.id !== id
+        })
+        setFavourites(removed)
+      }
 
     const [selectedCurrency, setSelectedCurrency] = useState(null)
+    const [favourites, setFavourites] = useState([])
 
     const handleChange = function (event) {
         event.preventDefault()
@@ -16,11 +23,11 @@ const Favourites = ({currencies, onCurrencySelected, onFavouriteSelected}) => {
     };
     const handleSubmit = function (event) {
         event.preventDefault()
-        if(selectedCurrency) {
-            onCurrencySelected(selectedCurrency)
-            onFavouriteSelected(event, selectedCurrency)
-        }
-  
+        if (selectedCurrency) {
+            const newFav = [...favourites, selectedCurrency]
+            setFavourites(newFav)
+            setSelectedCurrency(null)
+        }   
     }
 
     const currencyNames = currencies.map((currency) => {
@@ -33,11 +40,12 @@ const Favourites = ({currencies, onCurrencySelected, onFavouriteSelected}) => {
         )
     })
 
-    const favNames = selectedCurrency !== null ? (
+    const favNames = favourites.map((currency) => (
             <ListFavs 
-            currency = {selectedCurrency}
-            key = {selectedCurrency.id}
-            />) : null
+            currency = {currency}
+            key = {currency.id}
+            // deleteFav={deleteFav}
+            />))
 
         
 
@@ -47,11 +55,11 @@ const Favourites = ({currencies, onCurrencySelected, onFavouriteSelected}) => {
         <ul>
         {favNames}
         </ul>
-        <form onSubmit ={() => handleSubmit}>
-        <select>
+        <form onSubmit={handleSubmit}>
+        <select onChange={handleChange}>
         {currencyNames}
         </select>
-        <input type="submit" value="Add"></input>
+        <input type="submit" value="Add" onClick={handleSubmit}></input>
         </form>
         </div>
         
