@@ -26,17 +26,25 @@ td{
     color: green
 }
 
-ul{
+.ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content:flex-start;
+    margin-bottom: 20px;
+    
+}
+.ulimg{
+    height: 100px;
+    width: 100px;
     
 }
 .favcont{
     margin-right: 40px;
     border-radius: 10px;
-    border: 0.5 solid rgba(129, 129, 129, 0.275);
-    box-shadow: 2px 2px 4px rgba(129, 129, 129, 0.275);
+    border: 0.5px solid rgba(255, 255, 255, 0.582);
+    /* box-shadow: 2px 2px 4px rgba(129, 129, 129, 0.275); */
     padding: 20px;
+    text-align: center;
     justify-content: center;
     
 }

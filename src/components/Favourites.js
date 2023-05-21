@@ -52,9 +52,9 @@ const Favourites = ({currencies}) => {
 
     return (
         <div>
-        <ul>
+        <div class= "ul">
         {favNames}
-        </ul>
+        </div>
         <form onSubmit={handleSubmit}>
         <select onChange={handleChange}>
         {currencyNames}
