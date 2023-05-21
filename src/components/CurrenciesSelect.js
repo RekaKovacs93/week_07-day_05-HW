@@ -2,8 +2,8 @@ import React from "react"
 import ListItems from "./ListItems"
 
 const CurrenciesSelect = ({currencies, onCurrencySelected}) => {
-    const handleClick = function (currencyId) {
-        onCurrencySelected(currencyId)
+    const handleClick = function (currency) {
+        onCurrencySelected(currency)
         
         
     };
@@ -13,7 +13,7 @@ const CurrenciesSelect = ({currencies, onCurrencySelected}) => {
             <ListItems 
             currency = {currency}
             key = {currency.id}
-            handleClick = { () => handleClick(currency.id)}
+            handleClick = { () => handleClick(currency)}
             />
         )
     })
@@ -22,7 +22,7 @@ const CurrenciesSelect = ({currencies, onCurrencySelected}) => {
         <table>
         <thead>
         <tr>
-        <th>#</th>
+        <th className="small">#</th>
         <th>Name</th>
         <th>Price</th>
         <th>24H Price Change</th>
