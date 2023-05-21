@@ -54,7 +54,8 @@ const CurrencyContainer = () => {
             currencies = {currencies}
             onCurrencySelected={onCurrencySelected}
         />
-        {selectedCurrency? <CurrencyDetails currency = {selectedCurrency}/> : null}
+        {selectedCurrency? <CurrencyDetails
+        currency = {selectedCurrency}/> : null}
 
 
         </div>
