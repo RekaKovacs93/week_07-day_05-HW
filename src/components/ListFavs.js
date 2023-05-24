@@ -7,7 +7,8 @@ const ListFavs = ({currency, deleteFav}) => {
         <div className="favourites">
         {/* <button onClick={() => deleteFav(currency.id)}>X</button> */}
         <img className = "ulimg" src={currency.image}></img>
-        <h4>{currency.name}</h4></div>
+        <h4>{currency.name}</h4>
+        <p>${currency.current_price}</p></div>
         </div>
     )
 }
